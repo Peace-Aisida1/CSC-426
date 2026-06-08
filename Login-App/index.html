@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Page</title>
+<style>
+body {
+font-family: Arial;
+text-align: center;
+margin-top: 100px;
+}
+
+input {
+display: block;
+margin: 10px auto;
+padding: 10px;
+width: 200px;
+}
+
+button {
+padding: 10px 20px;
+margin: 5px;
+}
+
+#message {
+margin-top: 20px;
+font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Login System</h2>
+
+<input type="text" id="username" placeholder="Username">
+<input type="password" id="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+<button onclick="resetForm()">Reset</button>
+
+<p id="message"></p>
+
+<script>
+function login(){
+let user = document.getElementById("username").value;
+let pass = document.getElementById("password").value;
+
+if(user === "" || pass === ""){
+document.getElementById("message").innerText = "Please fill all fields";
+document.getElementById("message").style.color = "red";
+}
+else if(user === "admin" && pass === "12345"){
+document.getElementById("message").innerText = "Login Successful!";
+document.getElementById("message").style.color = "green";
+}
+else {
+document.getElementById("message").innerText = "Invalid Username or Password";
+document.getElementById("message").style.color = "red";
+}
+}
+
+function resetForm(){
+document.getElementById("username").value = "";
+document.getElementById("password").value = "";
+document.getElementById("message").innerText = "";
+}
+</script>
+
+</body>
+</html>
